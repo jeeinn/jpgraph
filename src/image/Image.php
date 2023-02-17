@@ -1608,7 +1608,7 @@ class Image
         }
         $old = $this->line_weight;
         imagesetthickness($this->img, 1);
-        imagefilledpolygon($this->img, $pts, safe_count($pts) / 2, $this->current_color);
+        imagefilledpolygon($this->img, $pts, $this->current_color);
         $this->line_weight = $old;
         imagesetthickness($this->img, $old);
     }
@@ -1979,7 +1979,7 @@ class Image
         $p4y = ceil(($y1 - $dist_y));
 
         $array = [$p1x, $p1y, $p2x, $p2y, $p3x, $p3y, $p4x, $p4y];
-        imagefilledpolygon($im, $array, (safe_count($array) / 2), $color);
+        imagefilledpolygon($im, $array, $color);
 
         // for antialias
         imageline($im, $p1x, $p1y, $p2x, $p2y, $color);
@@ -2042,7 +2042,7 @@ class Image
         }
 
         imagesetthickness($im, 1);
-        imagefilledpolygon($im, $pts, safe_count($pts) / 2, $color);
+        imagefilledpolygon($im, $pts, $color);
 
         $weight *= 2;
 
